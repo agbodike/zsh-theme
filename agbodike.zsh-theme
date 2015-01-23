@@ -4,7 +4,8 @@ function prompt_char {
   echo '○'
 }
 function git_initials {
-  echo "$(git config --get user.initials)"
+  local VAR="$(git config --get user.initials)"
+  echo ${VAR// /\+}
 }
 function ruby_version()
 {
